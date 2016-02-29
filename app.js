@@ -15,3 +15,13 @@ $('#imageSearchButton').on('click', function(){
   });
 
 });
+
+
+function mapInitialize() {
+	var mapProp = {
+    center: new google.maps.LatLng(39.7392, -104.9903),
+    zoom: 12,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}

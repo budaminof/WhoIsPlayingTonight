@@ -1,10 +1,28 @@
 html {
   height: 100%; }
 
+body {
+  background: url(http://ryfo.org/wp-content/uploads/2013/11/Music-Stage.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.page-header {
+  background-color: rgba(139, 171, 189, 0.7);
+  padding-left: 2%;
+  margin-bottom: 0;
+  margin-top: -1%;
+  padding-top: 1%;
+  border-bottom: none;
+  color: #d9d9d9; }
+
 .container {
+  background-color: rgba(211, 222, 230, 0.6);
   display: flex;
   min-height: 100vh;
-  flex-direction: column; }
+  flex-direction: column;
+  padding-top: 1%; }
 
 input, button {
   width: 12%;
@@ -13,14 +31,18 @@ input, button {
 footer {
   flex: 1;
   width: 100%;
-  background-color: #dddddd;
+  background-color: rgba(139, 171, 189, 0.6);
   height: 7%;
   text-align: center;
   padding-top: 1%;
-  padding-bottom: 1%; }
+  padding-bottom: 1%;
+  font-weight: bold; }
+
+H1 small {
+  color: #d9d9d9; }
 
 table {
-  width: 76%;
+  width: 45%;
   margin-top: 2%;
   margin-bottom: 2%; }
 
@@ -28,7 +50,16 @@ td {
   padding-left: 2%; }
 
 tr {
-  border-bottom: solid 1px black; }
+  border-bottom: solid 1px black;
+  padding-bottom: 1%; }
 
-tr button {
-  width: 70%; }
+td a:link, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold; }
+
+#map {
+  width: 500px;
+  height: 500px;
+  background-color: #5da36d;
+  font-size: 50px; }

@@ -1,5 +1,5 @@
 table {
-  width: 76%;
+  width: 45%;
   margin-top: 2%;
   margin-bottom: 2%;
 }
@@ -10,8 +10,11 @@ td {
 
 tr {
   border-bottom: solid 1px black;
+  padding-bottom: 1%;
 }
 
-tr button {
-  width: 70%;
+td a:link, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color:inherit;
+  font-weight: bold;
 }
