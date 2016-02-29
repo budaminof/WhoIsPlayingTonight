@@ -1,0 +1,34 @@
+html {
+  height: 100%; }
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+input, button {
+  width: 12%;
+  margin: -0.5%; }
+
+footer {
+  flex: 1;
+  width: 100%;
+  background-color: #dddddd;
+  height: 7%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%; }
+
+table {
+  width: 76%;
+  margin-top: 2%;
+  margin-bottom: 2%; }
+
+td {
+  padding-left: 2%; }
+
+tr {
+  border-bottom: solid 1px black; }
+
+tr button {
+  width: 70%; }
