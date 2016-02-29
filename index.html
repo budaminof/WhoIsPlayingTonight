@@ -12,11 +12,11 @@
   <title>my person project</title>
 </head>
 <body>
-  <div class="page-header">
+  <header class="page-header">
     <h1>Who is playing tonight? </h1>
     <h3>find the best musicians playing near you tonight and how to get there</h3>
-  </div>
-  <div class="container col-md-offset-1">
+  </header>
+  <main class="container col-md-offset-1">
     <input type="text" name="city" value="">
     <br>
     <input type="text" name="state" value="">
@@ -24,20 +24,18 @@
     <input type="number" name="radius" value="">
     <br>
     <button id="location">Search for location</button>
-    <table id="main">
-    </table>
-    <div id="map">
-    </div>
-  </div>
+    <section>
+      <table id="tabel">
+      </table>
+      <div id="map">
+      </div>
+    </section>
+  </main>
 
 
   <footer>my very cool app | bud aminof 2016</footer>
-  <!-- <script src="map.js"></script> -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
   <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer type="text/javascript"></script> -->
   <script src="main.js"></script>
 </body>
 </html>
-
-
-<!-- key=AIzaSyAlHnG63wT5dhSnqOPzTbLvOVbflJxJjD0? -->

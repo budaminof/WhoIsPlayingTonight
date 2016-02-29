@@ -42,9 +42,10 @@ H1 small {
   color: #d9d9d9; }
 
 table {
-  width: 45%;
+  width: 50%;
   margin-top: 2%;
-  margin-bottom: 2%; }
+  margin-bottom: 2%;
+  flex-direction: row; }
 
 td {
   padding-left: 2%; }
@@ -58,8 +59,14 @@ td a:link, a:hover, a:active, a:visited {
   color: inherit;
   font-weight: bold; }
 
+section {
+  display: flex;
+  flex-direction: row; }
+
 #map {
   width: 500px;
   height: 500px;
   background-color: #5da36d;
-  font-size: 50px; }
+  font-size: 50px;
+  flex-direction: row;
+  margin-left: 2%; }

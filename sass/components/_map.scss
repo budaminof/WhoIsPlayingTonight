@@ -1,6 +1,12 @@
+section {
+  display: flex;
+  flex-direction: row;
+}
 #map {
   width: 500px;
   height: 500px;
   background-color: rgb(93, 163, 109);
   font-size: 50px;
+  flex-direction: row;
+  margin-left: 2%;
 }
