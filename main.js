@@ -1,7 +1,8 @@
 // $(document).ready( function () {
   // console.log('we are on');
 
-//setting today's date.
+//setting today's date, in global scope.
+
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1;
@@ -14,6 +15,8 @@
   todayH1 = dd+'.'+mm+'.'+yyyy;
   $('h1').append('<small>'+todayH1+'</small>');
 
+//map declaration in global scope.
+
   var map;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -21,6 +24,43 @@
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
     })
+
+    var infoWindow = new google.maps.InfoWindow({map: map});
+// trying to add geolocation
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+      ///adding data layers- traffic, transit and biking/ walking.
+
+    // var trafficLayer = new google.maps.TrafficLayer();
+    // trafficLayer.setMap(map);
+    //
+    // var transitLayer = new google.maps.TransitLayer();
+    // transitLayer.setMap(map);
+    //
+    // var bikeLayer = new google.maps.BicyclingLayer();
+    // bikeLayer.setMap(map);
   }
 
   var markers = [];
@@ -34,6 +74,7 @@
   function clearMarkers() {
     setMapOnAll(null);
   }
+
 
 //searching for events.
 
@@ -56,7 +97,8 @@ $('#location').on('click', function (){
       var marker =new google.maps.Marker({
         position: location,
         map: map,
-        label: label
+        label: label,
+        animation: google.maps.Animation.DROP
       });
       var infoWindow = new google.maps.InfoWindow()
 
@@ -67,7 +109,6 @@ $('#location').on('click', function (){
       markers.push(marker);
     }
 
-    console.log("foo");
     $.ajax({
       url: 'https://api.bandsintown.com/events/search.json?api_version=2.0&app_id=CoolApp&location='+ city +','+ state +'&radius='+ miles +'&date='+ today,
       type: 'GET',
@@ -75,7 +116,6 @@ $('#location').on('click', function (){
       success: function(res) {
 
         for (var i = 0; i < res.length; i++) {
-          // arr = []
           var musician = res[i].artists[0].name;
           var venue = res[i].venue.name;
           var url = res[i].venue.url;
@@ -83,14 +123,12 @@ $('#location').on('click', function (){
           var venueLng = res[i].venue.longitude;
           map.setCenter({lat: venueLat, lng: venueLng})
           $('#table').append('<tr><td>'+ musician +'</td><td>'+ venue + '</td><td><a href='+ url +' target="_blank">Tickets</a></td></tr>');
-          // arr.push(venue, venueLat, venueLng);
-          // markers.push(arr);
           addMarker({lat: venueLat, lng: venueLng}, venue);
         }
 
       }
-    });
 
+    });
 });
 
 // }); // document ready end.
