@@ -9,4 +9,15 @@ section {
   font-size: 50px;
   flex-direction: row;
   margin-left: 2%;
+  margin-top: 2%;
+}
+
+@media only screen and (max-width: 800px ) {
+  // section {
+  //   flex-direction: column;
+  // }
+  #map {
+    width: 400px;
+    height: 400px;
+  }
 }
