@@ -15,18 +15,26 @@ body {
   margin-top: -1%;
   padding-top: 1%;
   border-bottom: none;
-  color: #d9d9d9; }
+  color: #121312; }
 
-.container {
-  background-color: rgba(211, 222, 230, 0.6);
+.container-fluid {
+  background-color: rgba(211, 222, 230, 0.8);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   padding-top: 1%; }
 
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column; }
+
 input, button {
-  width: 12%;
-  margin: -0.5%; }
+  width: 30%;
+  padding: 1%;
+  margin: -0.5%;
+  font-size: 150%; }
 
 footer {
   flex: 1;
@@ -39,7 +47,7 @@ footer {
   font-weight: bold; }
 
 H1 small {
-  color: #d9d9d9; }
+  color: #121312; }
 
 table {
   width: 50%;
@@ -61,14 +69,14 @@ td a:link, a:hover, a:active, a:visited {
 
 section {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: space-around; }
 
 #map {
+  display: none;
   width: 500px;
   height: 500px;
   background-color: #5da36d;
-  font-size: 50px;
-  flex-direction: row;
   margin-left: 2%;
   margin-top: 2%; }
 

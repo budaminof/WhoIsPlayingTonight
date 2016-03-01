@@ -16,21 +16,31 @@ body {
   margin-top: -1%;
   padding-top: 1%;
   border-bottom: none;
-  color: rgb(217, 217, 217);
-  // color: rgb(18, 19, 18);
+  // color: rgb(217, 217, 217);
+  color: rgb(18, 19, 18);
 }
 
-.container {
-  background-color: rgba(211, 222, 230, 0.6);
+.container-fluid {
+  background-color: rgba(211, 222, 230, 0.8);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   padding-top: 1%;
 }
 
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  // padding-left: 1.5%;
+}
+
 input, button {
-  width: 12%;
+  width: 30%;
+  padding: 1%;
   margin: - 0.5%;
+  font-size: 150%;
 }
 
 

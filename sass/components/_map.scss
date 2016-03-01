@@ -1,13 +1,14 @@
 section {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
+
 #map {
+  display: none;
   width: 500px;
   height: 500px;
   background-color: rgb(93, 163, 109);
-  font-size: 50px;
-  flex-direction: row;
   margin-left: 2%;
   margin-top: 2%;
 }
