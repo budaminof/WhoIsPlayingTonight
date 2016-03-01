@@ -43,7 +43,15 @@
           label: "*",
           animation: google.maps.Animation.DROP
         });
+
         startingMarker.setMap(map);
+        var infoWindow = new google.maps.InfoWindow();
+        
+        startingMarker.addListener('click', function() {
+          infoWindow.setContent("you are here");
+          infoWindow.open(map, this)
+        })
+
       };
       navigator.geolocation.getCurrentPosition(geoSuccess);
     };
