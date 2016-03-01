@@ -1,3 +1,12 @@
+/*320 px—Mobile portrait
+480 px—Mobile landscape
+600 px—Small tablet
+768 px—Tablet portrait
+1024 px—Tablet landscape & Laptop
+1280 px and up—Desktop*/
+
+
+
 $('#imageSearchButton').on('click', function(){
 
   var image = $('#imageSearchInput').val();

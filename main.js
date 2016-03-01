@@ -24,18 +24,35 @@
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
     })
-    var trafficLayer = new google.maps.TrafficLayer();
-    trafficLayer.setMap(map);
 
-    var transitLayer = new google.maps.TransitLayer();
-    transitLayer.setMap(map);
+    // check for Geolocation support
+    if (navigator.geolocation) console.log('Geolocation is supported!');
+    else alert('Geolocation is not supported for this Browser/OS version yet.');
 
-    var bikeLayer = new google.maps.BicyclingLayer();
-    bikeLayer.setMap(map);
+
+    window.onload = function() {
+      var startPosition;
+      var geoSuccess = function(position) {
+        startPosition = position;
+        myLat = startPosition.coords.latitude;
+        myLng = startPosition.coords.longitude;
+        map.setCenter({lat: myLat, lng: myLng});
+        var startingMarker = new google.maps.Marker({
+          position: {lat: myLat, lng: myLng},
+          map: map,
+          label: "*",
+          animation: google.maps.Animation.DROP
+        });
+        startingMarker.setMap(map);
+      };
+      navigator.geolocation.getCurrentPosition(geoSuccess);
+    };
+
   }
 
-  var markers = [];
+////markers on map
 
+  var markers = [];
   function setMapOnAll(map) {
     for (var i = 0; i < markers.length; i++) {
       markers[i].setMap(map);
@@ -45,7 +62,6 @@
   function clearMarkers() {
     setMapOnAll(null);
   }
-
 
 //searching for events.
 
@@ -65,7 +81,7 @@ $('#location').on('click', function (){
 
 
     function addMarker(location,label) {
-      var marker =new google.maps.Marker({
+      var marker = new google.maps.Marker({
         position: location,
         map: map,
         label: label,
@@ -92,14 +108,15 @@ $('#location').on('click', function (){
           var url = res[i].venue.url;
           var venueLat = res[i].venue.latitude;
           var venueLng = res[i].venue.longitude;
-          map.setCenter({lat: venueLat, lng: venueLng})
+          // map.setCenter({lat: venueLat, lng: venueLng})
+          map.setCenter({lat: myLat, lng: myLng});
           $('#table').append('<tr><td>'+ musician +'</td><td>'+ venue + '</td><td><a href='+ url +' target="_blank">Tickets</a></td></tr>');
           addMarker({lat: venueLat, lng: venueLng}, venue);
         }
 
       }
 
-    });
+  });
 });
 
 // }); // document ready end.
