@@ -1,7 +1,6 @@
-// $(document).ready( function () {
-  // console.log('we are on');
+console.log('we are on');
 
-//setting today's date, in global scope.
+//setting today's date
 
   var today = new Date();
   var dd = today.getDate();
@@ -16,24 +15,18 @@
   $('h1').append('<small>'+todayH1+'</small>');
 
 //map declaration.
-
-
   var map;
   var myLat;
   var myLng;
   function initMap() {
-
-    var directionsService = new google.maps.DirectionsService;
 
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
     })
 
-    var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    directionsDisplay.setMap(map);
+// check for Geolocation support
 
-    // check for Geolocation support
     if (navigator.geolocation) console.log('Geolocation is supported!');
     else alert('Geolocation is not supported for this Browser/OS version yet.');
 
@@ -144,10 +137,6 @@ $('#location').on('click', function (){
 
   });
 
-  // function calcRoute(desLat, desLng) {
-  //   console.log(myLat + ","+ myLng + "to "+ desLat + ", " +desLng);
-  // }
-
   function addToLocalStorage(){
     dataCity = JSON.stringify(city);
     dataState = JSON.stringify(state);
@@ -157,35 +146,3 @@ $('#location').on('click', function (){
 
 
 });
-
-
-// function getDataFromLocalStorage(){
-//   if (window.localStorage.cityData && window.localStorage.stateData) {
-//     city = JSON.parse(window.localStorage.cityData);
-//     state = JSON.parse(window.localStorage.stateData);
-//   }
-// }
-
-
-// }); // document ready end.
-
-
-    //
-    // google.maps.event.addListener('click', function () {
-      // function calcRoute() {
-      //   var start = startPosition; //geolocation
-      //   console.log(start);
-      //   var end = marker.getPosition(); // button clicked
-      //   var request = {
-      //     origin:start,
-      //     destination:end,
-      //     travelMode: google.maps.TravelMode[selectedMode]
-      //   };
-      //   directionsService.route(request, function(result, status) {
-      //     if (status == google.maps.DirectionsStatus.OK) {
-      //       directionsDisplay.setDirections(result);
-      //     }
-      //   });
-      // }
-    //
-    // })
