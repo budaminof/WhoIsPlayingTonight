@@ -15,15 +15,18 @@
   todayH1 = dd+'.'+mm+'.'+yyyy;
   $('h1').append('<small>'+todayH1+'</small>');
 
-//map declaration in global scope.
+//map declaration.
+
 
   var map;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-      // center: {lat: 40.018228, lng: -105.2864265},
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
     })
+
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var directionsService = new google.maps.DirectionsService();
 
     // check for Geolocation support
     if (navigator.geolocation) console.log('Geolocation is supported!');
@@ -46,7 +49,7 @@
 
         startingMarker.setMap(map);
         var infoWindow = new google.maps.InfoWindow();
-        
+
         startingMarker.addListener('click', function() {
           infoWindow.setContent("you are here");
           infoWindow.open(map, this)
@@ -55,6 +58,7 @@
       };
       navigator.geolocation.getCurrentPosition(geoSuccess);
     };
+
 
   }
 
@@ -71,6 +75,9 @@
     setMapOnAll(null);
   }
 
+
+
+
 //searching for events.
 
 $('#location').on('click', function (){
@@ -80,6 +87,7 @@ $('#location').on('click', function (){
   $('aside').css({'align-items': 'flex-start','justify-content': 'flex-start', 'padding-left': '1.5%'});
   $('input, button').css({'font-size': '100%', 'padding': '0', 'width': '10%'});
   $('#map').show();
+  $('#travel').show();
   google.maps.event.trigger(map, 'resize');
   $('#table').empty();
 
@@ -116,7 +124,6 @@ $('#location').on('click', function (){
           var url = res[i].venue.url;
           var venueLat = res[i].venue.latitude;
           var venueLng = res[i].venue.longitude;
-          // map.setCenter({lat: venueLat, lng: venueLng})
           map.setCenter({lat: myLat, lng: myLng});
           $('#table').append('<tr><td>'+ musician +'</td><td>'+ venue + '</td><td><a href='+ url +' target="_blank">Tickets</a></td></tr>');
           addMarker({lat: venueLat, lng: venueLng}, venue);
@@ -125,6 +132,29 @@ $('#location').on('click', function (){
       }
 
   });
+
 });
+
+// $('#map').on('click',function(){
+//   console.log("clicked");
+//   function calcRoute() {
+//     var start = startPosition; //geolocation
+//     var end = marker.getPosition(); // button clicked
+//     console.log(marker.getPosition());
+//     var request = {
+//       origin:start,
+//       destination:end,
+//       travelMode: google.maps.TravelMode[selectedMode]
+//     };
+//     directionsService.route(request, function(result, status) {
+//       if (status == google.maps.DirectionsStatus.OK) {
+//         directionsDisplay.setDirections(result);
+//       }
+//     });
+//   }
+
+})
+
+
 
 // }); // document ready end.

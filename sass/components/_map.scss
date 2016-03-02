@@ -4,6 +4,13 @@ section {
   justify-content: space-around;
 }
 
+#travel {
+  display: none;
+  position: absolute;
+  // top: -5%;
+  left: 61%;
+}
+
 #map {
   display: none;
   width: 500px;

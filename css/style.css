@@ -72,6 +72,11 @@ section {
   flex-direction: row;
   justify-content: space-around; }
 
+#travel {
+  display: none;
+  position: absolute;
+  left: 61%; }
+
 #map {
   display: none;
   width: 500px;
