@@ -153,7 +153,7 @@ $('#location').on('click', function (){
 //     });
 //   }
 
-})
+// })
 
 
 
