@@ -44,6 +44,10 @@
           position: {lat: myLat, lng: myLng},
           map: map,
           label: "*",
+          icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 7
+            },
           animation: google.maps.Animation.DROP
         });
 
@@ -85,7 +89,7 @@ $('#location').on('click', function (){
   clearMarkers();
   $('body').css('background', 'none');
   $('aside').css({'align-items': 'flex-start','justify-content': 'flex-start', 'padding-left': '1.5%'});
-  $('input, button').css({'font-size': '100%', 'padding': '0', 'width': '10%'});
+  $('input, button').css({'font-size': '100%', 'padding': '0', 'width': '10%', 'margin-left': '2%'});
   $('#map').show();
   $('#travel').show();
   google.maps.event.trigger(map, 'resize');
@@ -135,25 +139,25 @@ $('#location').on('click', function (){
 
 });
 
-// $('#map').on('click',function(){
-//   console.log("clicked");
-//   function calcRoute() {
-//     var start = startPosition; //geolocation
-//     var end = marker.getPosition(); // button clicked
-//     console.log(marker.getPosition());
-//     var request = {
-//       origin:start,
-//       destination:end,
-//       travelMode: google.maps.TravelMode[selectedMode]
-//     };
-//     directionsService.route(request, function(result, status) {
-//       if (status == google.maps.DirectionsStatus.OK) {
-//         directionsDisplay.setDirections(result);
-//       }
-//     });
-//   }
+$('#map').on('click',function(){
+  console.log("clicked");
+  function calcRoute() {
+    var start = startPosition; //geolocation
+    console.log(start);
+    var end = marker.getPosition(); // button clicked
+    var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode[selectedMode]
+    };
+    directionsService.route(request, function(result, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(result);
+      }
+    });
+  }
 
-// })
+})
 
 
 

@@ -2,7 +2,7 @@ html {
   height: 100%; }
 
 body {
-  background: url(https://ryfo.org/wp-content/uploads/2013/11/Music-Stage.jpg) no-repeat center center fixed;
+  background: url(http://ryfo.org/wp-content/uploads/2013/11/Music-Stage.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -46,6 +46,14 @@ footer {
   padding-bottom: 1%;
   font-weight: bold; }
 
+@media only screen and (max-width: 600px) {
+  input, button {
+    width: 70%; } }
+
+@media only screen and (max-width: 480px) {
+  input, button {
+    width: 70%; } }
+
 H1 small {
   color: #121312; }
 
@@ -60,12 +68,16 @@ td {
 
 tr {
   border-bottom: solid 1px black;
-  padding-bottom: 1%; }
+  padding-bottom: 3%; }
 
 td a:link, a:hover, a:active, a:visited {
   text-decoration: none;
   color: inherit;
   font-weight: bold; }
+
+@media only screen and (max-width: 1024px) {
+  table {
+    width: 90%; } }
 
 section {
   display: flex;
@@ -83,9 +95,11 @@ section {
   height: 500px;
   background-color: #5da36d;
   margin-left: 2%;
-  margin-top: 2%; }
+  margin-top: 2%;
+  margin-bottom: 2%; }
 
-@media only screen and (max-width: 800px) {
-  #map {
-    width: 400px;
-    height: 400px; } }
+@media only screen and (max-width: 1024px) {
+  section {
+    flex-direction: column; }
+  #travel {
+    position: flex; } }

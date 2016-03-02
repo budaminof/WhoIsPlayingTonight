@@ -7,7 +7,6 @@ section {
 #travel {
   display: none;
   position: absolute;
-  // top: -5%;
   left: 61%;
 }
 
@@ -18,26 +17,25 @@ section {
   background-color: rgb(93, 163, 109);
   margin-left: 2%;
   margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-@media only screen and (max-width: 800px ) {
-  // section {
-  //   flex-direction: column;
-  // }
-  #map {
-    width: 400px;
-    height: 400px;
+@media only screen and (max-width: 1024px) {
+  section{
+    flex-direction: column;
+  }
+  #travel {
+    position: flex;
+
   }
 }
 
-
-///traffic layers.
-
-// var trafficLayer = new google.maps.TrafficLayer();
-// trafficLayer.setMap(map);
-//
-// var transitLayer = new google.maps.TransitLayer();
-// transitLayer.setMap(map);
-//
-// var bikeLayer = new google.maps.BicyclingLayer();
-// bikeLayer.setMap(map);
+// @media only screen and (max-width: 800px ) {
+//   // section {
+//   //   flex-direction: column;
+//   // }
+//   #map {
+//     width: 400px;
+//     height: 400px;
+//   }
+// }

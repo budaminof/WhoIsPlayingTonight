@@ -3,12 +3,13 @@ html {
 }
 
 body {
-  background: url(https://ryfo.org/wp-content/uploads/2013/11/Music-Stage.jpg) no-repeat center center fixed;
+  background: url(http://ryfo.org/wp-content/uploads/2013/11/Music-Stage.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
 .page-header {
   background-color: rgba(139, 171, 189, 0.7);
   padding-left: 2%;
@@ -54,4 +55,18 @@ footer {
   padding-bottom: 1%;
   font-weight: bold;
 
+}
+
+
+@media only screen and (max-width: 600px) {
+  input, button {
+    width: 70%;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  input, button {
+    width: 70%;
+  }
 }
