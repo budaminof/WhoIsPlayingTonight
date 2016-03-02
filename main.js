@@ -63,6 +63,25 @@
       navigator.geolocation.getCurrentPosition(geoSuccess);
     };
 
+    // google.maps.event.addListener('click', function () {
+    //   console.log("clicked");
+    //   // function calcRoute() {
+    //   //   var start = startPosition; //geolocation
+    //   //   console.log(start);
+    //   //   var end = marker.getPosition(); // button clicked
+    //   //   var request = {
+    //   //     origin:start,
+    //   //     destination:end,
+    //   //     travelMode: google.maps.TravelMode[selectedMode]
+    //   //   };
+    //   //   directionsService.route(request, function(result, status) {
+    //   //     if (status == google.maps.DirectionsStatus.OK) {
+    //   //       directionsDisplay.setDirections(result);
+    //   //     }
+    //   //   });
+    //   // }
+    //
+    // })
 
   }
 
@@ -89,7 +108,7 @@ $('#location').on('click', function (){
   clearMarkers();
   $('body').css('background', 'none');
   $('aside').css({'align-items': 'flex-start','justify-content': 'flex-start', 'padding-left': '1.5%'});
-  $('input, button').css({'font-size': '100%', 'padding': '0', 'width': '10%', 'margin-left': '2%'});
+  $('input, button').css({'font-size': '100%', 'padding': '0', 'width': '10%', 'margin-left': '2%'}); /// change to add class
   $('#map').show();
   $('#travel').show();
   google.maps.event.trigger(map, 'resize');
@@ -137,27 +156,10 @@ $('#location').on('click', function (){
 
   });
 
+
+
 });
 
-$('#map').on('click',function(){
-  console.log("clicked");
-  function calcRoute() {
-    var start = startPosition; //geolocation
-    console.log(start);
-    var end = marker.getPosition(); // button clicked
-    var request = {
-      origin:start,
-      destination:end,
-      travelMode: google.maps.TravelMode[selectedMode]
-    };
-    directionsService.route(request, function(result, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(result);
-      }
-    });
-  }
-
-})
 
 
 
