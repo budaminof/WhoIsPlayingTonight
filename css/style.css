@@ -20,7 +20,7 @@ body {
 .container-fluid {
   background-color: rgba(136, 186, 164, 0.8);
   display: flex;
-  min-height: 80vh;
+  min-height: 100vh;
   flex-direction: column;
   padding-top: 1%; }
 
