@@ -73,7 +73,8 @@ aside {
 section {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-wrap: wrap; }
 
 #map {
   display: none;
@@ -83,6 +84,9 @@ section {
   margin-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%; }
+
+#directions {
+  margin: 0 5%; }
 
 @media only screen and (max-width: 1024px) {
   section {
