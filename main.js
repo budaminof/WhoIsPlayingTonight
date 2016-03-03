@@ -14,6 +14,12 @@ console.log('we are on');
   todayH1 = dd+'.'+mm+'.'+yyyy;
   $('h1').append('<small>'+todayH1+'</small>');
 
+///showing localStorage.
+
+  if(!localStorage.history) {
+    $('#mainAppend').hide();
+  }
+
 //map declaration.
   var map;
   var myLat;
