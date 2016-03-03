@@ -18,6 +18,7 @@ console.log('we are on');
   var map;
   var myLat;
   var myLng;
+
   function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -25,7 +26,7 @@ console.log('we are on');
     mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
   })
 
-// check for Geolocation support
+    // check for Geolocation support
 
     if (navigator.geolocation) console.log('Geolocation is supported!');
     else alert('Geolocation is not supported for this Browser/OS version yet.');
@@ -84,7 +85,21 @@ $('.fa-reorder').on('click', function () {
 //searching for events.
 
 $('#location').on('click', function (){
-  event.preventDefault();
+  // event.preventDefault();
+  var city = $('input[name="city"]').val();
+  var state = $('input[name="state"]').val();
+  var miles = $('input[name="radius"]').val();
+
+  var filterCity = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
+  if(!filterCity.test(city)){
+    $('input[name="city"]').css({'background-color': 'rgb(246, 54, 54)'});
+    return false;
+  }
+
+  if($('input[name="state"]').val() == "") {
+    $('input[name="state"]').css({'background-color': 'rgb(246, 54, 54)'});
+    return false;
+  }
 
   clearMarkers();
   $('#mainAppend').hide();
@@ -99,10 +114,6 @@ $('#location').on('click', function (){
   $('navigation').hide();
   $('i').addClass('burgerTime');
 
-
-  var city = ($('input[name="city"]')).val();
-  var state = ($('input[name="state"]')).val();
-  var miles = ($('input[name="radius"]')).val();
 //add validation for search inputs.
 //or add location using geolocation.
 
@@ -132,7 +143,6 @@ $('#location').on('click', function (){
       type: 'GET',
       dataType: 'jsonp',
       success: function(res) {
-
         for (var i = 0; i < res.length; i++) {
           var musician = res[i].artists[0].name;
           var venue = res[i].venue.name;
