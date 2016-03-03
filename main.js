@@ -16,7 +16,9 @@ console.log('we are on');
 
 ///showing localStorage.
 
-  if(!localStorage.history) {
+console.log(localStorage.history);
+
+  if(localStorage.history == undefined) {
     $('#mainAppend').hide();
   }
 
