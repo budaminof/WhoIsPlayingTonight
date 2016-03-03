@@ -47,7 +47,7 @@ console.log('we are on');
         startPosition = position;
         myLat = startPosition.coords.latitude;
         myLng = startPosition.coords.longitude;
-        map.setCenter({lat: myLat, lng: myLng});
+        // map.setCenter({lat: myLat, lng: myLng});
         var startingMarker = new google.maps.Marker({
           position: {lat: myLat, lng: myLng},
           map: map,
@@ -126,12 +126,14 @@ $('#location').on('click', function (){
 
 ///google map markers
     function addMarker(location,label) {
+
       var marker = new google.maps.Marker({
         position: location,
         map: map,
         label: label,
         animation: google.maps.Animation.DROP
       });
+
       var infoWindow = new google.maps.InfoWindow()
 
       marker.addListener('click', function() {

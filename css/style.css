@@ -60,7 +60,12 @@ aside {
   display: none;
   height: 500px;
   overflow: scroll;
-  margin-top: 1%; }
+  margin-top: 1%;
+  width: 50%; }
+
+@media only screen and (max-width: 1100px) {
+  aside {
+    width: 90%; } }
 
 @media only screen and (max-width: 1024px) {
   aside {
@@ -78,7 +83,7 @@ section {
 
 #map {
   display: none;
-  width: 500px;
+  width: 600px;
   height: 500px;
   background-color: #5da36d;
   margin-left: 2%;
@@ -86,11 +91,17 @@ section {
   margin-bottom: 2%; }
 
 #directions {
-  margin: 0 5%; }
+  margin: 0 2%; }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1100px) {
+  #map {
+    width: 700px; }
   section {
     flex-direction: column; } }
+
+@media only screen and (max-width: 800px) {
+  #map {
+    width: 600px; } }
 
 @media only screen and (max-width: 550px) {
   #map {
@@ -124,7 +135,8 @@ input {
   background-color: #fbfbfb; }
 
 #mainAppend td {
-  font-size: 150%; }
+  font-size: 140%;
+  height: 30%; }
 
 .fa-reorder {
   display: none;
