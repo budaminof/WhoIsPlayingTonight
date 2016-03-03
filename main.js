@@ -14,12 +14,6 @@ console.log('we are on');
   todayH1 = dd+'.'+mm+'.'+yyyy;
   $('h1').append('<small>'+todayH1+'</small>');
 
-///showing localStorage.
-
-  if(localStorage.history == undefined) {
-    $('#mainAppend').hide();
-  }
-
 //map declaration.
   var map;
   var myLat;
@@ -101,9 +95,11 @@ $('.fa-reorder').on('click', function () {
 
 $('#location').on('click', function (){
 
+
   var city = $('input[name="city"]').val();
   var state = $('input[name="state"]').val();
   var miles = $('input[name="radius"]').val();
+  console.log(city,state,miles);
 
   var filterCity = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
   if(!filterCity.test(city)){
@@ -115,6 +111,7 @@ $('#location').on('click', function (){
     $('input[name="state"]').css({'background-color': 'rgb(246, 54, 54)'});
     return false;
   }
+
 
   clearMarkers();
   $('#mainAppend').hide();
@@ -182,6 +179,10 @@ $('#location').on('click', function (){
     localStorage.setItem('history', yourShowArr); // the Jquery way.
   });
 
+  localStorage.setItem('city', city);
+  localStorage.setItem('state', state);
+  localStorage.setItem('miles', miles);
+
 });
 
 function calcRoute(desLat, desLng) {
@@ -204,6 +205,12 @@ function calcRoute(desLat, desLng) {
 }
 
 var myHtmlFromLocalStorage = localStorage.getItem('history'); //the Jquery way.
-// var myHtmlFromLocalStorage = window.localStorage.history; // the JS way.
+// // var myHtmlFromLocalStorage = window.localStorage.history; // the JS way.
+var myHTMLcity = localStorage.getItem('city');
+// var myHTMLstate = localStorage.getItem('state');
+// var myHTMLmiles = localStorage.getItem('miles');
 
-$("#mainAppend").append(myHtmlFromLocalStorage);
+$('#mainAppend').append(myHtmlFromLocalStorage);
+$('input[name="city"]').val(myHTMLcity);
+// $('input[name="state"]').val(myHTMLstate);
+// $('input[name="radius"]').val(parseInt(myHTMLmiles));
