@@ -11,10 +11,11 @@ body {
 }
 
 section {
-  margin-top: 2%;
+  margin-top: 5%;
 }
 .page-header {
-  background-color: rgba(139, 171, 189, 0.7);
+  // background-color: rgba(139, 171, 189, 0.9);
+  background-color: rgba(254, 232, 152, 0.9);
   padding-left: 2%;
   margin-bottom: 0;
   margin-top: -1%;
@@ -25,7 +26,10 @@ section {
 }
 
 .container-fluid {
-  background-color: rgba(211, 222, 230, 0.8);
+  // background-color: rgba(211, 222, 230, 0.8);
+  background-color: rgba(136,186,164, 0.8);
+
+  // rgb(84,169,146)
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -36,7 +40,8 @@ section {
 footer {
   flex: 1;
   width: 100%;
-  background-color: rgba(139, 171, 189, 0.8);
+  // background-color: rgba(139, 171, 189, 0.9);
+  background-color: rgba(254, 232, 152, 0.9);
   height: 7%;
   text-align: center;
   padding-top: 1%;
