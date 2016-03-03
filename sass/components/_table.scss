@@ -1,17 +1,18 @@
 table {
-  width: 50%;
+  width: 100%;
   margin-top: 2%;
   margin-bottom: 2%;
   flex-direction: row;
 }
 
 td {
-  padding-left: 2%;
+  padding: 10px 0;
 }
 
 tr {
   border-bottom: solid 1px black;
-  padding-bottom: 3%;
+  font-size: 110%;
+  padding: 10px 0;
 }
 
 a:link, a:hover, a:active, a:visited {
@@ -20,15 +21,20 @@ a:link, a:hover, a:active, a:visited {
   font-weight: bold;
 }
 
+aside {
+  display: none;
+  height: 500px;
+  overflow: scroll;
+}
 
 @media only screen and (max-width: 1024px) {
-  table {
+  aside {
     width: 90%;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  table {
+  aside {
     width: 90%;
   }
 }

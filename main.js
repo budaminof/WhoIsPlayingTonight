@@ -61,7 +61,6 @@ console.log('we are on');
       navigator.geolocation.getCurrentPosition(geoSuccess);
     };
 
-
   }
 
 ////markers on map
@@ -79,7 +78,7 @@ console.log('we are on');
 
   //navigation menu
 $('.fa-reorder').on('click', function () {
-    $('navigation').toggle();
+    $('navigation').slideToggle('slow');
   })
 
 //searching for events.
@@ -94,9 +93,11 @@ $('#location').on('click', function (){
   $('input, button').addClass('happening');
   $('.fa-reorder').show();
   $('#map').show();
+  $('aside').show();
   google.maps.event.trigger(map, 'resize');
   $('#table').empty();
   $('navigation').hide();
+  $('i').addClass('burgerTime');
 
 
   var city = ($('input[name="city"]')).val();
@@ -106,8 +107,7 @@ $('#location').on('click', function (){
 //or add location using geolocation.
 
 
-  // addToLocalStorage();
-
+///google map markers
     function addMarker(location,label) {
       var marker = new google.maps.Marker({
         position: location,
@@ -148,6 +148,7 @@ $('#location').on('click', function (){
 
   });
 
+///local storage
 
   $(document).on('click','tr', function () {
     var yourShowArr= [];

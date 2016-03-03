@@ -8,6 +8,9 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
+section {
+  margin-top: 2%; }
+
 .page-header {
   background-color: rgba(139, 171, 189, 0.7);
   padding-left: 2%;
@@ -38,29 +41,35 @@ H1 small {
   color: #121312; }
 
 table {
-  width: 50%;
+  width: 100%;
   margin-top: 2%;
   margin-bottom: 2%;
   flex-direction: row; }
 
 td {
-  padding-left: 2%; }
+  padding: 10px 0; }
 
 tr {
   border-bottom: solid 1px black;
-  padding-bottom: 3%; }
+  font-size: 110%;
+  padding: 10px 0; }
 
 a:link, a:hover, a:active, a:visited {
   text-decoration: none;
   color: inherit;
   font-weight: bold; }
 
+aside {
+  display: none;
+  height: 500px;
+  overflow: scroll; }
+
 @media only screen and (max-width: 1024px) {
-  table {
+  aside {
     width: 90%; } }
 
 @media only screen and (max-width: 400px) {
-  table {
+  aside {
     width: 90%; } }
 
 section {
@@ -103,21 +112,31 @@ navigation {
 
 input, button {
   width: 100%;
-  padding: 1%;
+  padding: 3%;
   margin: -0.5%;
-  font-size: 150%; }
+  font-size: 150%;
+  outline: none;
+  border: solid 1px #545454; }
+
+input {
+  background-color: #fbfbfb; }
 
 #mainAppend td {
   font-size: 150%; }
 
 .fa-reorder {
-  display: none; }
+  display: none;
+  font-size: 250%; }
 
 .happening {
   font-size: 100%;
-  padding: 0;
-  width: 140px;
-  margin-left: 2%; }
+  padding: 1.5%;
+  width: 200px; }
+
+.burgerTime {
+  margin-top: -1%;
+  margin-left: -5%;
+  padding-left: 5%; }
 
 @media only screen and (max-width: 800px) {
   navigation {
