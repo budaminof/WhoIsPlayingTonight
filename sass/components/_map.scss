@@ -4,12 +4,6 @@ section {
   justify-content: space-around;
 }
 
-#travel {
-  display: none;
-  position: absolute;
-  left: 61%;
-}
-
 #map {
   display: none;
   width: 500px;
@@ -24,18 +18,18 @@ section {
   section{
     flex-direction: column;
   }
-  #travel {
-    position: flex;
+}
 
+@media only screen and (max-width: 550px) {
+  #map {
+    width: 380px;
+    height: 380px;
   }
 }
 
-// @media only screen and (max-width: 800px ) {
-//   // section {
-//   //   flex-direction: column;
-//   // }
-//   #map {
-//     width: 400px;
-//     height: 400px;
-//   }
-// }
+@media only screen and (max-width: 400px) {
+  #map {
+    width: 340px;
+    height: 340px;
+  }
+}

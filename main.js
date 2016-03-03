@@ -20,10 +20,10 @@ console.log('we are on');
   var myLng;
   function initMap() {
 
-    map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
-      mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
-    })
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
+  })
 
 // check for Geolocation support
 
@@ -77,25 +77,36 @@ console.log('we are on');
     setMapOnAll(null);
   }
 
+  //navigation menu
+$('.fa-reorder').on('click', function () {
+    $('navigation').toggle();
+  })
+
 //searching for events.
 
 $('#location').on('click', function (){
   event.preventDefault();
 
   clearMarkers();
+  $('#mainAppend').hide();
   $('body').css('background', 'none');
-  $('aside').css({'align-items': 'flex-start','justify-content': 'flex-start', 'padding-left': '1.5%'});
-  $('input, button').css({'font-size': '100%', 'padding': '0', 'width': '10%', 'margin-left': '2%'}); /// change to add class
+  $('nav').css({'align-items': 'flex-start','justify-content': 'flex-start', 'padding-left': '1.5%', 'margin-top': '1%'});
+  $('input, button').addClass('happening');
+  $('.fa-reorder').show();
   $('#map').show();
-  $('#travel').show();
   google.maps.event.trigger(map, 'resize');
   $('#table').empty();
+  $('navigation').hide();
+
 
   var city = ($('input[name="city"]')).val();
   var state = ($('input[name="state"]')).val();
   var miles = ($('input[name="radius"]')).val();
+//add validation for search inputs.
+//or add location using geolocation.
 
-  addToLocalStorage();
+
+  // addToLocalStorage();
 
     function addMarker(location,label) {
       var marker = new google.maps.Marker({
@@ -137,12 +148,17 @@ $('#location').on('click', function (){
 
   });
 
-  function addToLocalStorage(){
-    dataCity = JSON.stringify(city);
-    dataState = JSON.stringify(state);
-    window.localStorage.cityData = dataCity + dataState;
-    window.localStorage.stateData = dataState;
-  }
 
+  $(document).on('click','tr', function () {
+    var yourShowArr= [];
+    yourShowArr.push($(this)[0].innerHTML);
+    // window.localStorage.history = yourShowArr; //the JS way.
+    localStorage.setItem('history', yourShowArr); // the Jquery way.
+  });
 
 });
+
+var myHtmlFromLocalStorage = localStorage.getItem('history'); //the Jquery way.
+// var myHtmlFromLocalStorage = window.localStorage.history; // the JS way.
+
+$("#mainAppend").append(myHtmlFromLocalStorage);

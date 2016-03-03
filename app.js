@@ -36,4 +36,14 @@
 // }
 
 
+  // var localStorageTest = {
+  //      history: ['html']
+  //
+  // };
+  // localStorageTest.hello = 'hey';
+  // localStorageTest.setItem = function(key, value){
+  //   this.something = 'something';
+  // }
+
+
 https://www.google.com/maps/dir/40.0177949,-105.2820175/40.0191,-105.277603

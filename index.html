@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js" charset="utf-8"></script>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>my person project</title>
 </head>
@@ -16,37 +18,38 @@
     <h1>Who is playing tonight? </h1>
     <h3>find the best musicians playing near you tonight and how to get there</h3>
   </header>
+
   <main class="container-fluid">
-    <aside>
-      <input type="text" name="city" value="" placeholder="city">
-      <br>
-      <input type="text" name="state" value="" placeholder="state">
-      <br>
-      <input type="number" name="radius" value="" placeholder="radius">
-      <br>
-      <button id="location">Search</button>
-    </aside>
+
+  <nav>
+    <i class="fa fa-reorder"></i>
+    <navigation>
+    <input type="text" name="city" value="" placeholder="city">
+    <br>
+    <input type="text" name="state" value="" placeholder="state">
+    <br>
+    <input type="number" name="radius" value="" placeholder="radius">
+    <br>
+    <button id="location">Search</button>
+  </navigation>
+  </nav>
+
+    <div id="mainAppend">
+      <h3>The last show you looked at: </h3>
+    </div>
+
     <section>
       <table class="table-hover">
         <tbody id="table">
         </tbody>
       </table>
-      <!-- <div id="travel" >
-        <strong>Mode of Travel: </strong>
-        <select id="mode" onchange="calcRoute();">
-          <option value="DRIVING">Driving</option>
-          <option value="WALKING">Walking</option>
-          <option value="BICYCLING">Bicycling</option>
-          <option value="TRANSIT">Transit</option>
-        </select>
-      </div> -->
       <div id="map">
       </div>
     </section>
   </main>
 
 
-  <footer>my very cool app | bud aminof 2016</footer>
+  <footer><h4>want to laugh about it together? || <a href="https://github.com/budaminof/personal-project" target="_blank">codebase</a></h4></footer>
   <script src="main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
 </body>

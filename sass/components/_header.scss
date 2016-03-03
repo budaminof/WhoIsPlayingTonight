@@ -1,0 +1,58 @@
+nav, #mainAppend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+navigation {
+  width: 30%;
+}
+
+input, button {
+  width: 100%;
+  padding: 1%;
+  margin: - 0.5%;
+  font-size: 150%;
+}
+
+#mainAppend td {
+  font-size: 150%;
+}
+
+.fa-reorder {
+  display: none;
+}
+
+.happening {
+  font-size: 100%;
+  padding: 0;
+  width: 140px;
+  margin-left: 2%;
+}
+
+.burgerTime {
+  
+}
+
+@media only screen and (max-width: 800px) {
+  navigation {
+    width: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  navigation {
+    width: 80%;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  navigation {
+    width: 80%;
+  }
+}
