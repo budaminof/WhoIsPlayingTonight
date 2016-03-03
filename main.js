@@ -18,13 +18,22 @@ console.log('we are on');
   var map;
   var myLat;
   var myLng;
+  var desLat;
+  var desLng;
+  var directionsDisplay;
+  var directionsService;
 
   function initMap() {
+    directionsDisplay = new google.maps.DirectionsRenderer;
+    directionsService = new google.maps.DirectionsService;
 
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADS //SATELLITE ROADS TERRAIN HYBRID
   })
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('directions'));
+
 
     // check for Geolocation support
 
@@ -85,7 +94,7 @@ $('.fa-reorder').on('click', function () {
 //searching for events.
 
 $('#location').on('click', function (){
-  // event.preventDefault();
+
   var city = $('input[name="city"]').val();
   var state = $('input[name="state"]').val();
   var miles = $('input[name="radius"]').val();
@@ -114,9 +123,6 @@ $('#location').on('click', function (){
   $('navigation').hide();
   $('i').addClass('burgerTime');
 
-//add validation for search inputs.
-//or add location using geolocation.
-
 
 ///google map markers
     function addMarker(location,label) {
@@ -129,11 +135,12 @@ $('#location').on('click', function (){
       var infoWindow = new google.maps.InfoWindow()
 
       marker.addListener('click', function() {
-        var desLat = this.position.lat();
-        var desLng = this.position.lng();
+        desLat = this.position.lat();
+        desLng = this.position.lng();
         var contentString = label + '<br/><a href="https://www.google.com/maps/dir/' + myLat + ',' + myLng + '/'+ desLat +','+ desLng +'" target="_blank">directions</a>';
         infoWindow.setContent(contentString);
         infoWindow.open(map, this);
+        calcRoute(desLat, desLng);
       })
       markers.push(marker);
     }
@@ -168,6 +175,25 @@ $('#location').on('click', function (){
   });
 
 });
+
+function calcRoute(desLat, desLng) {
+
+  start = new google.maps.LatLng(myLat, myLng);
+  end = new google.maps.LatLng(desLat, desLng);
+
+  directionsService.route({
+    origin: start,
+    destination: end,
+    travelMode: google.maps.TravelMode.BICYCLING
+      }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+
+}
 
 var myHtmlFromLocalStorage = localStorage.getItem('history'); //the Jquery way.
 // var myHtmlFromLocalStorage = window.localStorage.history; // the JS way.
