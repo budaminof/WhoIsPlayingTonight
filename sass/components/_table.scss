@@ -33,16 +33,27 @@ aside {
   aside {
     width: 90%;
   }
+
+#table tr {
+  font-size: 150%;
+  }
+
 }
 
 @media only screen and (max-width: 1024px) {
   aside {
     width: 90%;
   }
+  #table tr {
+    font-size: 140%;
+  }
 }
 
 @media only screen and (max-width: 400px) {
   aside {
     width: 90%;
+  }
+  #table tr {
+    font-size: 130%;
   }
 }
