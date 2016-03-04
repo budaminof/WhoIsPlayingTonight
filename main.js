@@ -120,6 +120,8 @@ $('#location').on('click', function (){
   $('navigation').hide();
   $('i').addClass('burgerTime');
   $('main').addClass('after');
+  $('#table').removeClass('error');
+
 
 
 ///google map markers
@@ -158,15 +160,14 @@ $('#location').on('click', function (){
           var venueLat = res[i].venue.latitude;
           var venueLng = res[i].venue.longitude;
           map.setCenter({lat: myLat, lng: myLng});
-          $('#table').append('<tr><td>'+ musician +'</td><td>'+ venue + '</td><td><a href='+ url +' target="_blank">Tickets</a></td></tr>');
+          $('#table').append('<tr><td class="musician">'+ musician +'</td><td class="venue">'+ venue + '</td><td class="tickets"><a href='+ url +' target="_blank">Tickets</a></td></tr>');
           addMarker({lat: venueLat, lng: venueLng}, venue);
 
         }
 
-        console.log($('#table').children().length);
         if($('#table').children().length == 0) {
           $('#table').append('<h1>What did you do to my program?!</h1>');
-          $('#table').css({'color': 'rgb(255, 0, 0)'});
+          $('#table').addClass('error');
         }
       }
 
