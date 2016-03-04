@@ -14,6 +14,7 @@
   <link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
   <title>my person project</title>
 </head>
+
 <body>
   <header class="page-header">
     <h1>Who is playing tonight? </h1>
@@ -22,18 +23,19 @@
 
   <main class="container-fluid">
 
-  <nav>
     <i class="fa fa-reorder"></i>
-    <navigation>
-    <input type="text" name="city" value="" placeholder="city">
-    <br>
-    <input type="text" name="state" value="" placeholder="state">
-    <br>
-    <input type="number" name="radius" value="" placeholder="within how many miles?" min="0">
-    <br>
-    <button id="location">Search</button>
-  </navigation>
-  </nav>
+
+    <div class="myForm">
+        <form id="locationSearchForm">
+        <input type="text" name="city" value="" placeholder="city" autofocus>
+        <br>
+        <input type="text" name="state" value="" placeholder="state">
+        <br>
+        <input type="number" name="radius" value="" placeholder="within how many miles?" min="0">
+        <br>
+        <input type="submit" value="Search">
+        </form>
+    </div>
 
     <div id="mainAppend">
       <h2>The last show someone looked at: </h2>
@@ -54,8 +56,10 @@
   </main>
 
 
-  <footer><h3>want to laugh about it together? || <a href="https://github.com/budaminof/personal-project" target="_blank">codebase</a> && <a href="https://www.facebook.com/bud.aninaminof" target="_blank"><img src="FB.png" alt="fb"></a></h3></footer>
+  <footer>
+    <h3>want to laugh about it together? || <a href="https://github.com/budaminof/personal-project" target="_blank">codebase</a> && <a href="https://www.facebook.com/bud.aninaminof" target="_blank"><img src="FB.png" alt="fb"></a></h3></footer>
   <script src="main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
 </body>
+
 </html>

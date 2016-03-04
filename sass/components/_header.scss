@@ -6,11 +6,7 @@ nav, #mainAppend {
   margin-top: 3%;
 }
 
-navigation {
-  width: 30%;
-}
-
-input, button {
+input {
   width: 100%;
   padding: 3%;
   margin: - 0.5%;
@@ -19,9 +15,8 @@ input, button {
   border: solid 1px rgb(84, 84, 84);
 }
 
-input {
-  background-color: rgb(251, 251, 251);
-
+input[type="submit"] {
+    background-color: rgb(156, 156, 156);
 }
 
 #mainAppend td {
@@ -29,16 +24,26 @@ input {
   height: 30%;
 }
 
+.myForm {
+    width: 400px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.danger {
+    background-color: rgb(246, 54, 54);
+}
+
 .fa-reorder {
   display: none;
   font-size: 250%;
   color:#F6B352;
+  padding-top: 3px;
 
 }
 
 .happening {
   font-size: 100%;
-  padding: 1.5%;
   width: 200px;
 }
 
@@ -50,20 +55,20 @@ input {
 
 
 @media only screen and (max-width: 800px) {
-  navigation {
+  .myForm {
     width: 60%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  navigation {
+  .myForm {
     width: 80%;
   }
 }
 
 @media only screen and (max-width: 480px) {
 
-  navigation {
+  .myForm {
     width: 80%;
   }
 }

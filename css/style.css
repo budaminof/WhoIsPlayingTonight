@@ -154,10 +154,7 @@ nav, #mainAppend {
   flex-direction: column;
   margin-top: 3%; }
 
-navigation {
-  width: 30%; }
-
-input, button {
+input {
   width: 100%;
   padding: 3%;
   margin: -0.5%;
@@ -165,21 +162,29 @@ input, button {
   outline: none;
   border: solid 1px #545454; }
 
-input {
-  background-color: #fbfbfb; }
+input[type="submit"] {
+  background-color: #9c9c9c; }
 
 #mainAppend td {
   font-size: 140%;
   height: 30%; }
 
+.myForm {
+  width: 400px;
+  position: relative;
+  margin: 0 auto; }
+
+.danger {
+  background-color: #f63636; }
+
 .fa-reorder {
   display: none;
   font-size: 250%;
-  color: #F6B352; }
+  color: #F6B352;
+  padding-top: 3px; }
 
 .happening {
   font-size: 100%;
-  padding: 1.5%;
   width: 200px; }
 
 .burgerTime {
@@ -188,13 +193,13 @@ input {
   padding-left: 5%; }
 
 @media only screen and (max-width: 800px) {
-  navigation {
+  .myForm {
     width: 60%; } }
 
 @media only screen and (max-width: 600px) {
-  navigation {
+  .myForm {
     width: 80%; } }
 
 @media only screen and (max-width: 480px) {
-  navigation {
+  .myForm {
     width: 80%; } }
