@@ -12,18 +12,33 @@ body {
 
 
 .page-header {
-  background-color: rgb(254, 232, 152);
+  // background-color: rgb(254, 232, 152);
   // background-color: rgb(244,109,67);
+  background-color: #1F2124;
   padding-left: 2%;
   margin-bottom: 0;
   margin-top: -1%;
   padding-top: 1%;
   border-bottom: none;
-  color: rgb(18, 19, 18);
+  // color: rgb(18, 19, 18);
+  // color:#F68657;
+  // color:#F6B352;
+  color: rgb(136,186,164);
+
 }
 
 .container-fluid {
-  background-color: rgba(136,186,164, 0.8);
+  // background-color: rgba(136,186,164, 0.8);
+  // background-color: rgba(56, 58, 62, 0.8);
+  // background-color: rgba(83, 85, 89, 0.8);
+  // color: #1F2124;
+  // background-color: rgba(133, 144, 137, 0.8);
+  background-color: rgba(56, 58, 62, 0.8);
+  color:rgb(136,186,164);
+
+
+  // color: #F6B352;
+  // color:rgb(136,186,164);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -34,12 +49,19 @@ body {
 footer {
   flex: 1;
   width: 100%;
-  background-color: rgb(254, 232, 152);
+  background-color: #1F2124;
+
+  // background-color: rgb(254, 232, 152);
   height: 7%;
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
   font-weight: bold;
+  // color:#F68657;
+  // color:#F6B352;
+  color:rgb(136,186,164);
+
+
 
 }
 

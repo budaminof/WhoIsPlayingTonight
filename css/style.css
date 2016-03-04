@@ -9,16 +9,17 @@ body {
   background-size: cover; }
 
 .page-header {
-  background-color: #fee898;
+  background-color: #1F2124;
   padding-left: 2%;
   margin-bottom: 0;
   margin-top: -1%;
   padding-top: 1%;
   border-bottom: none;
-  color: #121312; }
+  color: #88baa4; }
 
 .container-fluid {
-  background-color: rgba(136, 186, 164, 0.8);
+  background-color: rgba(56, 58, 62, 0.8);
+  color: #88baa4;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -27,15 +28,29 @@ body {
 footer {
   flex: 1;
   width: 100%;
-  background-color: #fee898;
+  background-color: #1F2124;
   height: 7%;
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
-  font-weight: bold; }
+  font-weight: bold;
+  color: #88baa4; }
 
 H1 small {
-  color: #121312; }
+  color: #F6B352; }
+
+body {
+  font-family: 'Ubuntu Condensed', sans-serif; }
+
+input, button {
+  color: #1F2124; }
+
+#mainAppend {
+  font-size: 130%;
+  color: #88baa4; }
+
+.after {
+  background-color: #383a3e; }
 
 table {
   width: 100%;
@@ -46,9 +61,9 @@ table {
 td {
   padding: 10px 0; }
 
-tr {
+#table tr {
   border-bottom: solid 1px black;
-  font-size: 110%;
+  font-size: 160%;
   padding: 10px 0; }
 
 a:link, a:hover, a:active, a:visited {
@@ -79,7 +94,8 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 2%; }
 
 #map {
   display: none;
@@ -91,7 +107,11 @@ section {
   margin-bottom: 2%; }
 
 #directions {
-  margin: 0 2%; }
+  display: none;
+  margin: 0 2%;
+  padding: 1%;
+  background-color: #ededed;
+  border-radius: 7px; }
 
 @media only screen and (max-width: 1100px) {
   #map {
@@ -140,7 +160,8 @@ input {
 
 .fa-reorder {
   display: none;
-  font-size: 250%; }
+  font-size: 250%;
+  color: #F6B352; }
 
 .happening {
   font-size: 100%;

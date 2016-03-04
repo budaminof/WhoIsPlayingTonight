@@ -1,5 +1,4 @@
 console.log('we are on');
-
 //setting today's date
 
   var today = new Date();
@@ -34,12 +33,10 @@ console.log('we are on');
   directionsDisplay.setMap(map);
   directionsDisplay.setPanel(document.getElementById('directions'));
 
-
     // check for Geolocation support
 
     if (navigator.geolocation) console.log('Geolocation is supported!');
     else alert('Geolocation is not supported for this Browser/OS version yet.');
-
 
     window.onload = function() {
       var startPosition;
@@ -47,11 +44,9 @@ console.log('we are on');
         startPosition = position;
         myLat = startPosition.coords.latitude;
         myLng = startPosition.coords.longitude;
-        // map.setCenter({lat: myLat, lng: myLng});
         var startingMarker = new google.maps.Marker({
           position: {lat: myLat, lng: myLng},
           map: map,
-          // label: "*",
           icon: {
               path: google.maps.SymbolPath.CIRCLE,
               scale: 7
@@ -86,7 +81,8 @@ console.log('we are on');
     setMapOnAll(null);
   }
 
-  //navigation menu
+//navigation menu
+
 $('.fa-reorder').on('click', function () {
     $('navigation').slideToggle('slow');
   })
@@ -94,7 +90,6 @@ $('.fa-reorder').on('click', function () {
 //searching for events.
 
 $('#location').on('click', function (){
-
 
   var city = $('input[name="city"]').val();
   var state = $('input[name="state"]').val();
@@ -125,6 +120,7 @@ $('#location').on('click', function (){
   $('#table').empty();
   $('navigation').hide();
   $('i').addClass('burgerTime');
+  $('main').addClass('after');
 
 
 ///google map markers
@@ -146,6 +142,7 @@ $('#location').on('click', function (){
         infoWindow.setContent(contentString);
         infoWindow.open(map, this);
         calcRoute(desLat, desLng);
+        $('#directions').show();
       })
       markers.push(marker);
     }
@@ -175,13 +172,8 @@ $('#location').on('click', function (){
   $(document).on('click','tr', function () {
     var yourShowArr= [];
     yourShowArr.push($(this)[0].innerHTML);
-    // window.localStorage.history = yourShowArr; //the JS way.
-    localStorage.setItem('history', yourShowArr); // the Jquery way.
+    localStorage.setItem('history', yourShowArr); 
   });
-
-  localStorage.setItem('city', city);
-  localStorage.setItem('state', state);
-  localStorage.setItem('miles', miles);
 
 });
 
@@ -204,13 +196,5 @@ function calcRoute(desLat, desLng) {
 
 }
 
-var myHtmlFromLocalStorage = localStorage.getItem('history'); //the Jquery way.
-// // var myHtmlFromLocalStorage = window.localStorage.history; // the JS way.
-var myHTMLcity = localStorage.getItem('city');
-// var myHTMLstate = localStorage.getItem('state');
-// var myHTMLmiles = localStorage.getItem('miles');
-
+var myHtmlFromLocalStorage = localStorage.getItem('history');
 $('#mainAppend').append(myHtmlFromLocalStorage);
-$('input[name="city"]').val(myHTMLcity);
-// $('input[name="state"]').val(myHTMLstate);
-// $('input[name="radius"]').val(parseInt(myHTMLmiles));
