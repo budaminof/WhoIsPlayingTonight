@@ -94,7 +94,6 @@ $('#location').on('click', function (){
   var city = $('input[name="city"]').val();
   var state = $('input[name="state"]').val();
   var miles = $('input[name="radius"]').val();
-  console.log(city,state,miles);
 
   var filterCity = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
   if(!filterCity.test(city)){
@@ -161,6 +160,7 @@ $('#location').on('click', function (){
           map.setCenter({lat: myLat, lng: myLng});
           $('#table').append('<tr><td>'+ musician +'</td><td>'+ venue + '</td><td><a href='+ url +' target="_blank">Tickets</a></td></tr>');
           addMarker({lat: venueLat, lng: venueLng}, venue);
+
         }
 
       }
@@ -172,8 +172,15 @@ $('#location').on('click', function (){
   $(document).on('click','tr', function () {
     var yourShowArr= [];
     yourShowArr.push($(this)[0].innerHTML);
-    localStorage.setItem('history', yourShowArr); 
+    localStorage.setItem('history', yourShowArr);
   });
+
+///error if search done bad.
+
+  if($('#table').children().length == 0) {
+    $('#table').append('<h1>What did you do to my program?!</h1>');
+    $('#table').css({'color': 'rgb(255, 0, 0)'});
+  }
 
 });
 
