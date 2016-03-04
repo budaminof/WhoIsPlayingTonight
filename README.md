@@ -34,7 +34,7 @@ You think you understand scope?! not until you handled this delicate google.mapI
 You think You don't understand what is an API? than use 3 of them in one project.
 You know what localStorage actually is? Ask Akyuna to explain it in the detailed way, and than add local storage to everything
 on your site, only to discover that it will break your delicate google.mapInit function. But at least you know how it works.
-I was the worst student I could be this week.
-I was out of my comfort zone- thank you for dealing with me.
+
+To everyone who was there and supported me- thank you for dealing with me.
 
 FYI- my map shows only biking direction- welcome to the revolution.
