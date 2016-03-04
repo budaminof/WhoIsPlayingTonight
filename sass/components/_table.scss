@@ -12,7 +12,6 @@ td {
 #table tr{
   border-bottom: solid 1px black;
   font-size: 160%;
-  padding: 10px 0;
 }
 
 
@@ -22,6 +21,7 @@ a:link, a:hover, a:active, a:visited {
   font-weight: bold;
 }
 
+
 aside {
   display: none;
   height: 500px;
@@ -30,9 +30,15 @@ aside {
   width: 50%;
 }
 
+
+.tickets {
+  color:#F6B352;
+}
+
 .error {
   color: rgb(255, 0, 0);
 }
+
 @media only screen and (max-width: 1100px) {
   aside {
     width: 90%;

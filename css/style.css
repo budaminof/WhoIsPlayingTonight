@@ -66,8 +66,7 @@ td {
 
 #table tr {
   border-bottom: solid 1px black;
-  font-size: 160%;
-  padding: 10px 0; }
+  font-size: 160%; }
 
 a:link, a:hover, a:active, a:visited {
   text-decoration: none;
@@ -80,6 +79,9 @@ aside {
   overflow: scroll;
   margin-top: 1%;
   width: 50%; }
+
+.tickets {
+  color: #F6B352; }
 
 .error {
   color: red; }

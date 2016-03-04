@@ -106,7 +106,6 @@ $('#location').on('click', function (){
     return false;
   }
 
-
   clearMarkers();
   $('#mainAppend').hide();
   $('body').css('background', 'none');
@@ -160,7 +159,7 @@ $('#location').on('click', function (){
           var venueLat = res[i].venue.latitude;
           var venueLng = res[i].venue.longitude;
           map.setCenter({lat: myLat, lng: myLng});
-          $('#table').append('<tr><td class="musician">'+ musician +'</td><td class="venue">'+ venue + '</td><td class="tickets"><a href='+ url +' target="_blank">Tickets</a></td></tr>');
+          $('#table').append('<tr><td><h3>'+ musician +'</h3></td><td>'+ venue + '</td><td class="tickets"><a href='+ url +' target="_blank">Tickets</a></td></tr>');
           addMarker({lat: venueLat, lng: venueLng}, venue);
 
         }
