@@ -163,6 +163,11 @@ $('#location').on('click', function (){
 
         }
 
+        console.log($('#table').children().length);
+        if($('#table').children().length == 0) {
+          $('#table').append('<h1>What did you do to my program?!</h1>');
+          $('#table').css({'color': 'rgb(255, 0, 0)'});
+        }
       }
 
   });
@@ -176,11 +181,6 @@ $('#location').on('click', function (){
   });
 
 ///error if search done bad.
-
-  if($('#table').children().length == 0) {
-    $('#table').append('<h1>What did you do to my program?!</h1>');
-    $('#table').css({'color': 'rgb(255, 0, 0)'});
-  }
 
 });
 
