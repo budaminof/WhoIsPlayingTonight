@@ -101,6 +101,7 @@
         $('main').addClass('after');
         $('#table').removeClass('error');
         $('input').removeClass('danger');
+        $('#directions').hide();
         
         ///google map markers
         function addMarker(location, label) {
