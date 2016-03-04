@@ -52,6 +52,9 @@ input, button {
 .after {
   background-color: #383a3e; }
 
+div {
+  color: #1F2124; }
+
 table {
   width: 100%;
   margin-top: 2%;
