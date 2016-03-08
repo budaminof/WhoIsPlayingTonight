@@ -4,6 +4,8 @@ nav, #mainAppend {
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 3%;
+  color: #1F2124;
+
 }
 
 input {
@@ -16,13 +18,16 @@ input {
 }
 
 input[type="submit"] {
-    background-color: rgb(156, 156, 156);
+    background-color: #F6B352;
+
 }
 
 #mainAppend td {
   font-size: 140%;
   height: 30%;
+  color: #1F2124;
 }
+
 
 .myForm {
     width: 400px;

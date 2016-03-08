@@ -3,7 +3,7 @@
     initMap = initMapFn;
 
     //variable declaration.
-    var map, myLat, myLng, desLat, desLng, directionsDisplay, directionsService;
+    var map, myLat, myLng, desLat, desLng, directionsDisplay, directionsService, musician;
 
     //setting today's date
     var today = new Date().toISOString().slice(0, 10).split('-'),
@@ -12,7 +12,7 @@
         day = today[2],
         apiToday = today.join('-');
 
-    $('h1').append('<small>' + [month, day, year].join('.') + '</small>');
+    $('h1').append('<h2 class="date">' + [month, day, year].join('.') + '</h2>');
 
     function initMapFn() {
         // clear directions div
@@ -102,7 +102,7 @@
         $('#table').removeClass('error');
         $('input').removeClass('danger');
         $('#directions').hide();
-        
+
         ///google map markers
         function addMarker(location, label) {
             var marker = new google.maps.Marker({
@@ -131,7 +131,7 @@
             dataType: 'jsonp',
             success: function(res) {
                 for (var i = 0; i < res.length; i++) {
-                    var musician = res[i].artists[0].name;
+                    musician = res[i].artists[0].name;
                     var venue = res[i].venue.name;
                     var url = res[i].venue.url;
                     var venueLat = res[i].venue.latitude;
@@ -140,7 +140,7 @@
                         lat: myLat,
                         lng: myLng
                     });
-                    $('#table').append('<tr><td><h3>' + musician + '</h3></td><td>' + venue + '</td><td class="tickets"><a href=' + url + ' target="_blank">Tickets</a></td></tr>');
+                    $('#table').append('<tr><td><h3>' + musician + '</h3></td><td>' + venue + '</td><td><a href=' + url + ' target="_blank">Tickets</a></td></tr>');
                     addMarker({
                         lat: venueLat,
                         lng: venueLng
@@ -160,6 +160,7 @@
             var yourShowArr = [];
             yourShowArr.push($(this)[0].innerHTML);
             localStorage.setItem('history', yourShowArr);
+
         });
     });
 
@@ -181,6 +182,7 @@
         });
 
     }
+
 
     var myHtmlFromLocalStorage = localStorage.getItem('history');
     $('#mainAppend').append(myHtmlFromLocalStorage);

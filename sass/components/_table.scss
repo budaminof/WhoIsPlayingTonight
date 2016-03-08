@@ -12,12 +12,14 @@ td {
 #table tr{
   border-bottom: solid 1px black;
   font-size: 160%;
+  color:rgb(136,186,164);
+
 }
 
 
 a:link, a:hover, a:active, a:visited {
   text-decoration: none;
-  color:inherit;
+  color:#F6B352;
   font-weight: bold;
 }
 
@@ -30,10 +32,6 @@ aside {
   width: 50%;
 }
 
-
-.tickets {
-  color:#F6B352;
-}
 
 .error {
   color: rgb(255, 0, 0);

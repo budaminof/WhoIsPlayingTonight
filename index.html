@@ -12,13 +12,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-  <title>my person project</title>
+  <title>who is playing tonight?</title>
 </head>
 
 <body>
   <header class="page-header">
     <h1>Who is playing tonight? </h1>
     <h2>find the best musicians playing near you tonight and how to get there</h2>
+    <div id='player'></div>
   </header>
 
   <main class="container-fluid">
@@ -57,9 +58,18 @@
 
 
   <footer>
-    <h3>want to laugh about it together? || <a href="https://github.com/budaminof/personal-project" target="_blank">codebase</a> && <a href="https://www.facebook.com/bud.aninaminof" target="_blank"><img src="FB.png" alt="fb"></a></h3></footer>
+    <h3>want to laugh about it together? || <a id="footerLink" href="https://github.com/budaminof/personal-project" target="_blank">codebase</a> && <div class="fb-share-button" data-href="https://eventsandmaps.firebaseapp.com/" data-layout="button"></div></h3></footer>
   <script src="main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+  <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 
 </html>

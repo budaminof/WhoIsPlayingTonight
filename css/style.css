@@ -2,24 +2,24 @@ html {
   height: 100%; }
 
 body {
-  background: url(../Music-Stage.jpg) no-repeat center center fixed;
+  background: url(../2.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
 
 .page-header {
-  background-color: #1F2124;
+  background-color: white;
+  border-bottom: 1px solid black;
   padding-left: 2%;
   margin-bottom: 0;
   margin-top: -1%;
   padding-top: 1%;
-  border-bottom: none;
-  color: #88baa4; }
+  text-align: center; }
 
 .container-fluid {
-  background-color: rgba(56, 58, 62, 0.8);
   color: #88baa4;
+  background-color: rgba(136, 186, 164, 0.6);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -28,15 +28,19 @@ body {
 footer {
   flex: 1;
   width: 100%;
-  background-color: #1F2124;
+  background-color: white;
   height: 7%;
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
   font-weight: bold;
-  color: #88baa4; }
+  border-top: 1px solid black;
+  color: #1F2124; }
 
-H1 small {
+#footerLink {
+  color: #1F2124; }
+
+.date {
   color: #F6B352; }
 
 body {
@@ -46,11 +50,10 @@ input, button {
   color: #1F2124; }
 
 #mainAppend {
-  font-size: 130%;
-  color: #88baa4; }
+  font-size: 130%; }
 
 .after {
-  background-color: #383a3e; }
+  background-color: white; }
 
 div {
   color: #1F2124; }
@@ -66,11 +69,12 @@ td {
 
 #table tr {
   border-bottom: solid 1px black;
-  font-size: 160%; }
+  font-size: 160%;
+  color: #88baa4; }
 
 a:link, a:hover, a:active, a:visited {
   text-decoration: none;
-  color: inherit;
+  color: #F6B352;
   font-weight: bold; }
 
 aside {
@@ -79,9 +83,6 @@ aside {
   overflow: scroll;
   margin-top: 1%;
   width: 50%; }
-
-.tickets {
-  color: #F6B352; }
 
 .error {
   color: red; }
@@ -152,7 +153,8 @@ nav, #mainAppend {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top: 3%; }
+  margin-top: 3%;
+  color: #1F2124; }
 
 input {
   width: 100%;
@@ -163,11 +165,12 @@ input {
   border: solid 1px #545454; }
 
 input[type="submit"] {
-  background-color: #9c9c9c; }
+  background-color: #F6B352; }
 
 #mainAppend td {
   font-size: 140%;
-  height: 30%; }
+  height: 30%;
+  color: #1F2124; }
 
 .myForm {
   width: 400px;
