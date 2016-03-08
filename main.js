@@ -160,6 +160,7 @@
             var yourShowArr = [];
             yourShowArr.push($(this)[0].innerHTML);
             localStorage.setItem('history', yourShowArr);
+            console.log($(this));
 
         });
     });
