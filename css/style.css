@@ -37,9 +37,6 @@ footer {
   border-top: 1px solid black;
   color: #1F2124; }
 
-#footerLink {
-  color: #1F2124; }
-
 .date {
   color: #F6B352; }
 
@@ -56,6 +53,9 @@ input, button {
   background-color: white; }
 
 div {
+  color: #1F2124; }
+
+#footerLink {
   color: #1F2124; }
 
 table {
