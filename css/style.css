@@ -67,6 +67,9 @@ table {
 td {
   padding: 10px 0; }
 
+th:hover {
+  color: #831a1a; }
+
 #table tr {
   border-bottom: solid 1px black;
   font-size: 160%;
@@ -172,7 +175,7 @@ input {
 input[type="submit"] {
   background-color: #F6B352; }
 
-#mainAppend td {
+#mainAppend td, #mainAppend th {
   font-size: 140%;
   height: 30%;
   color: #1F2124; }
@@ -220,5 +223,8 @@ iframe {
 #player {
   display: none;
   height: 80px;
-  width: 70%;
-  text-align: center; }
+  width: 70%; }
+
+#player h3 {
+  text-align: center;
+  padding-left: 40%; }

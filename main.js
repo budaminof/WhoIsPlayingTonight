@@ -139,7 +139,6 @@
                     var venueLat = res[i].venue.latitude;
                     var venueLng = res[i].venue.longitude;
                     var time = res[i].datetime.slice(11,16);
-                    console.log(time);
                     map.setCenter({
                         lat: myLat,
                         lng: myLng
@@ -211,7 +210,7 @@
                 if(!triedOnce) {
                     play(bandName)
                 } else {
-                    $('#player').append('<h3>Sorry, we can not find this artist.</h3>');
+                    $('#player').append('<h3>Sorry, we can not find this artist on our playlists.</h3>');
                 }
                 triedOnce = true;
             });
