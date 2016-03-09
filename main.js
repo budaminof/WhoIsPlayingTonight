@@ -3,7 +3,7 @@
     initMap = initMapFn;
 
     //variable declaration.
-    var map, myLat, myLng, desLat, desLng, directionsDisplay, directionsService, musician;
+    var map, myLat, myLng, desLat, desLng, directionsDisplay, directionsService, musician, time;
 
     //setting today's date
     var today = new Date().toISOString().slice(0, 10).split('-'),
@@ -88,6 +88,8 @@
         }
 
         $('#mainAppend').hide();
+        $('.appInfo').hide();
+        $('#player').show();
         $('body').css('background', 'none');
         $('.myForm').css({'margin': '10px 0 0 0'});
         $('input, button').addClass('happening');
@@ -136,11 +138,14 @@
                     var url = res[i].venue.url;
                     var venueLat = res[i].venue.latitude;
                     var venueLng = res[i].venue.longitude;
+                    var time = res[i].datetime.slice(11,16);
+                    console.log(time);
                     map.setCenter({
                         lat: myLat,
                         lng: myLng
                     });
-                    $('#table').append('<tr><td><h3 class="listen">' + musician + '</h3></td><td>' + venue + '</td><td><a href=' + url + ' target="_blank">Tickets</a></td></tr>');
+                    $('#table').append('<tr><td class="time">'+ time +'</td><th id="listen">' + musician + '</th><td>' + venue + '</td><td><a href=' + url + ' target="_blank">Tickets</a></td></tr>');
+
                     addMarker({
                         lat: venueLat,
                         lng: venueLng
@@ -156,55 +161,14 @@
 
         });
 
-        $(document).on('click','.listen', function() {
-            event.preventDefault();
-            $('#player').empty();
-            var bandName = $(this).text();
-
-            play(bandName);
-            ///if the api doesn't find a match- stop.
-            var triedOnce = false;
-
-            function play(bandName) {
-
-                bandName = bandName.replace(/\s/g, '-');
-                var bandUrl = 'https://soundcloud.com/' + bandName;
-
-                SC.initialize({
-                    client_id: '38fc3613a83da4e5fb2713cea0d0fd89',
-                    client_secret: '6b6996f886734cd2b2b338098f7e606e'
-                });
-
-                SC.oEmbed(bandUrl , {
-                    auto_play: true
-                }).then(function(oEmbed) {
-                    console.log('oEmbed response', oEmbed);
-                    $('#player').append(oEmbed.html);
-                }).catch(function (error) {
-                    console.log(error);
-
-                    bandName = bandName.replace(/-/g, '');
-                    if(!triedOnce) {
-                        play(bandName)
-                    } else {
-                        $('#player').append('<h3>Sorry, we can not find this artist.</h3>');
-                    }
-                    triedOnce = true;
-                });
-            }
-
-        });
-
         $(document).on('click', 'tr', function() {
             var yourShowArr = [];
             yourShowArr.push($(this)[0].innerHTML);
             localStorage.setItem('history', yourShowArr);
         });
-
     });
 
     function calcRoute(desLat, desLng) {
-        // console.log(desLat, desLng);
         start = new google.maps.LatLng(myLat, myLng);
         end = new google.maps.LatLng(desLat, desLng);
 
@@ -213,14 +177,46 @@
             destination: end,
             travelMode: google.maps.TravelMode.BICYCLING
         }, function(response, status) {
-            // console.log(status);
-            // console.log(response);
             if (status === google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
             }
         });
-
     }
+
+    $(document).on('click','#listen', function() {
+        event.preventDefault();
+        $('#player').empty();
+
+        var bandName = $(this).text();
+
+        play(bandName);
+        //if the api doesn't find a match- stop.
+        var triedOnce = false;
+
+        function play(bandName) {
+            bandName = bandName.replace(/\s/g, '-');
+            var bandUrl = 'https://soundcloud.com/' + bandName;
+
+            SC.initialize({
+                client_id: '38fc3613a83da4e5fb2713cea0d0fd89',
+                client_secret: '6b6996f886734cd2b2b338098f7e606e'
+            });
+
+            SC.oEmbed(bandUrl , {
+                auto_play: true
+            }).then(function(oEmbed) {
+                $('#player').append(oEmbed.html);
+            }).catch(function (error) {
+                bandName = bandName.replace(/-/g, '');
+                if(!triedOnce) {
+                    play(bandName)
+                } else {
+                    $('#player').append('<h3>Sorry, we can not find this artist.</h3>');
+                }
+                triedOnce = true;
+            });
+        }
+    });
 
 
     var myHtmlFromLocalStorage = localStorage.getItem('history');

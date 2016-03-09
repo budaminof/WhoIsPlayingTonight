@@ -19,7 +19,7 @@ td {
 
 a:link, a:hover, a:active, a:visited {
   text-decoration: none;
-  color:#F6B352;
+  color:rgb(246, 179, 82);
   font-weight: bold;
 }
 
@@ -35,6 +35,10 @@ aside {
 
 .error {
   color: rgb(255, 0, 0);
+}
+
+.time {
+    padding-right: 7px;
 }
 
 @media only screen and (max-width: 1100px) {
