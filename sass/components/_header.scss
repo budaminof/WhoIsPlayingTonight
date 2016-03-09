@@ -4,7 +4,7 @@ nav, #mainAppend {
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 3%;
-  color: #1F2124;
+  color: $dark;
 
 }
 
@@ -25,7 +25,7 @@ input[type="submit"] {
 #mainAppend td, #mainAppend th {
   font-size: 140%;
   height: 30%;
-  color: #1F2124;
+  color: $dark;
 }
 
 
@@ -42,7 +42,7 @@ input[type="submit"] {
 .fa-reorder {
   display: none;
   font-size: 250%;
-  color:#F6B352;
+  color: $orange;
   padding-top: 3px;
 
 }

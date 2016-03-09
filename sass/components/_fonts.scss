@@ -1,5 +1,10 @@
+$orange: #F6B352;
+$dark: #1F2124;
+$backWhite: rgb(255, 255, 255);
+$myGreen: rgb(136,186,164);
+
 .date {
-color:#F6B352;
+color: $orange;
 }
 
 body {
@@ -19,9 +24,9 @@ background-color: rgb(255, 255, 255);
 }
 
 div {
-  color: #1F2124;
+  color: $dark;
 }
 
 #footerLink {
-    color: #1F2124;
+    color: $dark;
 }

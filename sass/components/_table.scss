@@ -10,20 +10,20 @@ td {
 }
 
 th:hover {
-    color: rgb(131, 26, 26);    
+    color: rgb(131, 26, 26);
 }
 
 #table tr{
   border-bottom: solid 1px black;
   font-size: 160%;
-  color:rgb(136,186,164);
+  color: $myGreen;
 
 }
 
 
 a:link, a:hover, a:active, a:visited {
   text-decoration: none;
-  color:rgb(246, 179, 82);
+  color: $orange;
   font-weight: bold;
 }
 
