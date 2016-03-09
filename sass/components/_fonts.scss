@@ -3,12 +3,12 @@ $dark: #1F2124;
 $backWhite: rgb(255, 255, 255);
 $myGreen: rgb(136,186,164);
 
-.date {
-color: $orange;
-}
-
 body {
   font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.date {
+    color: $orange;
 }
 
 input, button {
