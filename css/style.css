@@ -9,7 +9,7 @@ body {
   background-size: cover; }
 
 .page-header {
-  background-color: white;
+  background-color: #ffffff;
   border-bottom: 1px solid black;
   padding-left: 2%;
   margin-bottom: 0;
@@ -28,7 +28,7 @@ body {
 footer {
   flex: 1;
   width: 100%;
-  background-color: white;
+  background-color: #ffffff;
   height: 7%;
   text-align: center;
   padding-top: 1%;
@@ -37,11 +37,11 @@ footer {
   border-top: 1px solid black;
   color: #1F2124; }
 
-.date {
-  color: #F6B352; }
-
 body {
   font-family: 'Ubuntu Condensed', sans-serif; }
+
+.date {
+  color: #F6B352; }
 
 input, button {
   color: #1F2124; }
@@ -77,7 +77,7 @@ th:hover {
 
 a:link, a:hover, a:active, a:visited {
   text-decoration: none;
-  color: #f6b352;
+  color: #F6B352;
   font-weight: bold; }
 
 aside {
@@ -122,7 +122,6 @@ section {
   display: none;
   width: 600px;
   height: 500px;
-  background-color: #5da36d;
   margin-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%; }
