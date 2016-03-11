@@ -191,6 +191,7 @@
         play(bandName);
         //if the api doesn't find a match- stop.
         var triedOnce = false;
+        console.log('before the function', triedOnce);
 
         function play(bandName) {
             bandName = bandName.replace(/\s/g, '-');
@@ -201,18 +202,19 @@
                 client_secret: '6b6996f886734cd2b2b338098f7e606e'
             });
 
-            SC.oEmbed(bandUrl , {
-                auto_play: true
-            }).then(function(oEmbed) {
+            SC.oEmbed(bandUrl , {auto_play: true}).then(function(oEmbed) {
                 $('#player').append(oEmbed.html);
             }).catch(function (error) {
                 bandName = bandName.replace(/-/g, '');
                 if(!triedOnce) {
+                    console.log('!triedOnce',triedOnce);
                     play(bandName)
                 } else {
+                    console.log('error', triedOnce);
                     $('#player').append('<h3>Sorry, we can not find this artist on our playlists.</h3>');
                 }
                 triedOnce = true;
+                console.log('last', triedOnce);
             });
         }
     });
