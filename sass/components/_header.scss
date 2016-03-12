@@ -72,6 +72,11 @@ input[type="submit"] {
 }
 
 @media only screen and (max-width: 480px) {
+    #player h3 {
+        width: 100%;
+        margin: 0;
+
+    }
 
   .myForm {
     width: 80%;

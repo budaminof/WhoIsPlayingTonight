@@ -211,6 +211,9 @@ input[type="submit"] {
     width: 80%; } }
 
 @media only screen and (max-width: 480px) {
+  #player h3 {
+    width: 100%;
+    margin: 0; }
   .myForm {
     width: 80%; } }
 
@@ -227,3 +230,10 @@ iframe {
 #player h3 {
   text-align: center;
   padding-left: 40%; }
+
+@media only screen and (max-width: 480px) {
+  #player {
+    width: 100%; }
+  #player h3 {
+    width: 100%;
+    padding-left: 0; } }
