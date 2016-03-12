@@ -191,7 +191,7 @@
         play(bandName);
         //if the api doesn't find a match- stop.
         var triedOnce = false;
-        console.log('before the function', triedOnce);
+        // console.log('before the function', triedOnce);
 
         function play(bandName) {
             bandName = bandName.replace(/\s/g, '-');
@@ -207,14 +207,14 @@
             }).catch(function (error) {
                 bandName = bandName.replace(/-/g, '');
                 if(!triedOnce) {
-                    console.log('!triedOnce',triedOnce);
+                    // console.log('!triedOnce',triedOnce);
                     play(bandName)
                 } else {
-                    console.log('error', triedOnce);
+                    // console.log('error', triedOnce);
                     $('#player').append('<h3>Sorry, we can not find this artist on our playlists.</h3>');
                 }
                 triedOnce = true;
-                console.log('last', triedOnce);
+                // console.log('last', triedOnce);
             });
         }
     });
