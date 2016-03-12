@@ -232,8 +232,6 @@ iframe {
   padding-left: 40%; }
 
 @media only screen and (max-width: 480px) {
-  #player {
-    width: 100%; }
   #player h3 {
     width: 100%;
     padding-left: 0; } }
