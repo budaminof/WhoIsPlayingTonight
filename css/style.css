@@ -152,8 +152,8 @@ section {
 
 @media only screen and (max-width: 400px) {
   #map {
-    width: 340px;
-    height: 340px; } }
+    width: 320px;
+    height: 400px; } }
 
 nav, #mainAppend {
   display: flex;
