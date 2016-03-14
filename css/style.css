@@ -148,10 +148,11 @@ section {
 @media only screen and (max-width: 550px) {
   #map {
     width: 380px;
-    height: 380px; } }
+    height: 400px; } }
 
 @media only screen and (max-width: 400px) {
   #map {
+    margin-left: 5px;
     width: 320px;
     height: 400px; } }
 
