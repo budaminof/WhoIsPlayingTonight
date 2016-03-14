@@ -18,10 +18,13 @@ iframe {
 @media only screen and (max-width: 480px) {
     #player h3 {
         width: 100%;
-        padding-left: 20%;
+        padding-left: 15%;
     }
     #player {
         width:90%;
+    }
+    iframe{
+        margin-left: 10px;
     }
 
 }
