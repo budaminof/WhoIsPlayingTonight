@@ -3,8 +3,8 @@
     initMap = initMapFn;
 
     //variable declaration.
-    var map, myLat, myLng, desLat, desLng, directionsDisplay, directionsService, musician, time;
-
+    var map, myLat, myLng, desLat, desLng, directionsDisplay, directionsService, musician, time, infoWindow;
+    var markersArray = [];
     //setting today's date
     var today = new Date().toISOString().slice(0, 10).split('-'),
         year = today[0],
@@ -105,16 +105,20 @@
         $('input').removeClass('danger');
         $('#directions').hide();
 
+
         ///google map markers
-        function addMarker(location, label) {
+        function addMarker(location, label, className) {
             var marker = new google.maps.Marker({
                 position: location,
                 map: map,
                 label: label,
-                animation: google.maps.Animation.DROP
+                animation: google.maps.Animation.DROP,
+                title: 'row-' + className
             });
 
-            var infoWindow = new google.maps.InfoWindow()
+            infoWindow = new google.maps.InfoWindow()
+
+            markersArray.push(marker);
 
             marker.addListener('click', function() {
                 desLat = this.position.lat();
@@ -143,12 +147,12 @@
                         lat: myLat,
                         lng: myLng
                     });
-                    $('#table').append('<tr><td class="time">'+ time +'</td><th id="listen">' + musician + '</th><td>' + venue + '</td><td><a href=' + url + ' target="_blank">Tickets</a></td></tr>');
+                    $('#table').append('<tr id="'+i+'"><td class="time">'+ time +'</td><th id="listen">' + musician + '</th><td id="'+i+'">' + venue + '</td><td><a href=' + url + ' target="_blank">Tickets</a></td></tr>');
 
                     addMarker({
                         lat: venueLat,
                         lng: venueLng
-                    }, venue);
+                    }, venue, i);
 
                 }
 
@@ -166,6 +170,29 @@
             localStorage.setItem('history', yourShowArr);
         });
     });
+
+    $(document).on('mouseover', 'tr', function (event){
+        var id = $(this).attr('id');
+        toggleBounce(markersArray[id]);
+    })
+
+    $(document).on('mouseleave', 'tr', function(event){
+        var id = $(this).attr('id');
+        toggleBounce(markersArray[id]);
+    })
+
+    $(document).on('click', 'tr', function (event){
+        var id = $(this).attr('id');
+        new google.maps.event.trigger(markersArray[id], 'click');
+    })
+
+    function toggleBounce(marker) {
+         if (marker.getAnimation() !== null) {
+           marker.setAnimation(null);
+         } else {
+           marker.setAnimation(google.maps.Animation.BOUNCE);
+         }
+    }
 
     function calcRoute(desLat, desLng) {
         start = new google.maps.LatLng(myLat, myLng);
