@@ -1,5 +1,5 @@
 {
-  "firebase": "eventsandmaps",
+  "firebase": "whoisplayingtonight",
   "public": ".",
   "ignore": [
     "firebase.json",
